@@ -1,0 +1,16 @@
+package twitter_test;
+
+import java.io.Serializable;
+
+public class TweetBean implements Serializable {
+	private String searchWord;
+
+	public String getSearchWord() {
+		return searchWord;
+	}
+
+	public void setSearchWord(String searchWord) {
+		this.searchWord = searchWord;
+	}
+
+}

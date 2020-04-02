@@ -1,0 +1,44 @@
+package twitter_test;
+
+import java.io.Serializable;
+
+public class TweetBean implements Serializable {
+	private String searchWord;
+	private String text;
+	private String user;
+	private String creatAt;
+
+
+	public String getSearchWord() {
+		return searchWord;
+	}
+
+	public void setSearchWord(String searchWord) {
+		this.searchWord = searchWord;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public String getUser() {
+		return user;
+	}
+
+	public void setUser(String user) {
+		this.user = user;
+	}
+
+	public String getCreatAt() {
+		return creatAt;
+	}
+
+	public void setCreatAt(String creatAt) {
+		this.creatAt = creatAt;
+	}
+
+}

@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+/Users/koichi.bato/twitter-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/76714572.index
+/twitter_sample/src
+/Users/koichi.bato/twitter-workspace/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2773309928.index
+/twitter_test/src

@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="twitter_test.TweetBean" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="twitter4j.User" %>
+
+<%
+//リクエストスコープに保存されたTweetBeanクラスを取得
+/* TweetBean tweet = (TweetBean) request.getAttribute("tweet"); */
+List<String> text = (List<String>) request.getAttribute("text");
+/* List<User> user = (List<User>) request.getAttribute("user"); */
+List<Date> createdAt = (List<Date>) request.getAttribute("createdAt");
+%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Twitter検索結果</title>
+</head>
+<body>
+<h2>Twitter検索結果ページ</h2>
+<% for(int i = 0; i < text.size(); i++) { %>
+	<div>
+		<%=text.get(i) %>
+	</div>
+	<%-- <div>
+		<%=user.get(i) %>
+	</div> --%>
+	<div>
+		<%=createdAt.get(i) %>
+	</div>
+<% } %>
+</body>
+</html>

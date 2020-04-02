@@ -1,0 +1,53 @@
+package twitter_test;
+
+import java.io.IOException;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+//import javax.servlet.http.HttpSession;
+import twitter4j.TwitterException;
+
+/**
+ * Servlet implementation class TweetServlet
+ */
+@WebServlet("/TweetServlet")
+public class TweetServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	//サーブレットから検索画面を呼び出す
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/search.jsp");
+		rd.forward(request, response);
+	}
+	//検索画面からpostメソッドで呼び出す
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		
+		//検索画面からの入力を取得し、値をセットする
+		String searchWord  = request.getParameter("search");
+		System.out.println
+		TweetBean tweet = new TweetBean();
+		tweet.setSearchWord(searchWord);
+//		
+//		//Tweet取得クラスをインスタンス化し、メソッドを実行
+//		GetTweet getTweet = new GetTweet();
+//		try {
+//		getTweet.execute();
+//		}catch(TwitterException e){
+//			
+//		}
+//		//リクエストスコープに保存
+//		request.setAttribute("tweet",tweet);
+//		
+//		//検索画面にフォワード
+//		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/search.jsp");
+//		rd.forward(request, response);	
+//		
+	}
+}

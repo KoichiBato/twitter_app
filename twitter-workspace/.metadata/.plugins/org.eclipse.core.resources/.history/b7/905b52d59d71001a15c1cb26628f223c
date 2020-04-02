@@ -1,0 +1,38 @@
+package twitter_test;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+
+import twitter4j.User;
+
+public class TweetBean implements Serializable {
+	private String searchWord;
+	private List<String> text;
+	private List<User> user;
+	private List<Date> creatAt;
+	public String getSearchWord() {
+		return searchWord;
+	}
+	public void setSearchWord(String searchWord) {
+		this.searchWord = searchWord;
+	}
+	public List<String> getText() {
+		return text;
+	}
+	public void setText(List<String> text) {
+		this.text = text;
+	}
+	public List<User> getUser() {
+		return user;
+	}
+	public void setUser(List<User> user) {
+		this.user = user;
+	}
+	public List<Date> getCreatAt() {
+		return creatAt;
+	}
+	public void setCreatAt(List<Date> creatAt) {
+		this.creatAt = creatAt;
+	}
+}

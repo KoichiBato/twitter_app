@@ -1,0 +1,51 @@
+package twitter_test;
+
+import java.io.IOException;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+//import javax.servlet.http.HttpSession;
+import twitter4j.TwitterException;
+
+/**
+ * Servlet implementation class TweetServlet
+ */
+@WebServlet("/TweetServlet")
+public class TweetServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/search.jsp");
+		rd.forward(request, response);
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		
+		String searchWord  = request.getParameter("search");
+		TweetBean tweet = new TweetBean();
+		tweet.setSearchWord(searchWord);
+		
+		GetTweet getTweet = new GetTweet();
+		try {
+		getTweet.execute();
+		}catch(TwitterException e){
+			
+		}
+//		HttpSession session = request.getSession();
+		request.setAttribute("tweet",tweet);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/jsp/search.jsp");
+		rd.forward(request, response);	
+		
+	}
+
+	
+
+}

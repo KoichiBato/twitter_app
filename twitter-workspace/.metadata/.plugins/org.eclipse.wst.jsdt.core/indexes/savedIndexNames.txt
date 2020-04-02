@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+/Users/koichi.bato/twitter-workspace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+98540448.index
+597559527.index
+1427191649.index
+363730233.index
+2773309928.index
+2363701474.index
+529805618.index

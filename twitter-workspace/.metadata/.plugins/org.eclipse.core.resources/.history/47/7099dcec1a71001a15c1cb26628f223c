@@ -1,0 +1,44 @@
+package twitter_test;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import twitter4j.Query;
+import twitter4j.QueryResult;
+import twitter4j.Status;
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
+import twitter4j.TwitterFactory;
+import twitter4j.User;
+
+public class GetTweet {
+
+	public void execute(TweetBean tweet) throws TwitterException {
+		List<String> text = new ArrayList<String>();
+		List<User> user = new ArrayList<User>();
+		List<Date> createAt = new ArrayList<Date>();
+
+		// 初期化
+		Twitter twitter = new TwitterFactory().getInstance();
+		Query query = new Query();
+
+		// 検索ワードをセット
+		//query.setQuery("会津");
+//		TweetBean tweet = new TweetBean();
+		query.setQuery(tweet.getSearchWord());
+
+		// 検索実行
+		QueryResult result = twitter.search(query);
+		for (Status status : result.getTweets()) {
+			// 本文
+			text.add(status.getText());
+			// 発言したユーザ
+			user.add(status.getUser());
+			// 発言した日時
+			createAt.add(status.getCreatedAt());
+		}
+
+	}
+
+}
